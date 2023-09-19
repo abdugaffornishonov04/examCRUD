@@ -1,0 +1,117 @@
+.hero {
+  .hero-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    .hero-top {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      .hero-card {
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+
+        .hero-card-image-box {
+          width: 100%;
+          height: 200px;
+          border: 2px solid red;
+          position: relative;
+
+          img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+          }
+
+          .teacher-firstname {
+            margin: 0;
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-size: 22px;
+            background-color: #fff;
+            color: #000;
+          }
+
+          .teacher-lastname {
+            margin: 0;
+            position: absolute;
+            bottom: 50px;
+            left: 10px;
+            font-size: 12px;
+            background-color: #fff;
+            color: #000;
+          }
+        }
+
+        .hero-card-body {
+          padding: 10px;
+          display: flex;
+          flex-direction: column;
+
+          .techer-groups-groups {
+            margin: 0;
+            font-weight: 700;
+            font-size: 17px;
+          }
+
+          .teacher-groups {
+            margin: 0;
+            font-size: 15px;
+            font-style: italic;
+          }
+
+          .teacher-ismarried {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 5px;
+          }
+
+          .teacher-phone-number {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 5px;
+          }
+
+          .teacher-email {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 5px;
+            text-decoration: none;
+          }
+          
+          .teacher-buttons-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            .teacher-see-students {
+              text-align: center;
+              margin-top: 10px;
+              margin-bottom: 5px;
+              text-decoration: none;
+              color: #fff;
+              padding: 10px;
+              width: 100%;
+            }
+
+            .teacher-edit-delete-btns {
+              display: flex;
+              gap: 18px;
+
+              button {
+                width: 130px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

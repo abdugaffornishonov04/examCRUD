@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teachers | CRUD</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script defer type="module" src="js/axios.js"></script>
+    <script defer type="module" src="js/const.js"></script>
+    <script defer src="js/bootstrap.bundle.js"></script>
+    <script defer type="module" src="js/main.js"></script>
+    <script defer type="module" src="js/teachers.js"></script>
+  </head>
+  <body>
+    <!-- HEADER -->
+
+    <header class="header">
+      <div class="container">
+        <div class="header-wrapper">
+          <div class="header-logo">Abdugaffor</div>
+          <nav class="header-nav">
+            <ul>
+              <li><a href="teachers.html">Teachers</a></li>
+              <li><a href="students.html">All Students</a></li>
+            </ul>
+          </nav>
+          <div class="header-dark-light">
+            <!-- <button type="button" class="btn btn-light">Light</button> -->
+            <button type="button" class="btn btn-dark">Dark</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="container">
+          <div class="hero-wrapper">
+            <!-- hero top -->
+
+            <div class="hero-top">
+              <div class="input-group mb-3 my-3">
+                <input
+                  type="search"
+                  class="form-control search-input"
+                  placeholder="Search for teachers..."
+                />
+                <span class="input-group-text" id="basic-addon2">
+                  <!--  -->
+                  <select class="form-select teacher-ismarried-select">
+                    <option value="all" selected>All (Married)</option>
+                    <option value="isMarried">Is Married</option>
+                    <option value="notMarried">Not Married</option>
+                  </select>
+                  <select
+                    class="form-select mx-3 lastNameselect-ascdesc"
+                    aria-label="Default select example"
+                  >
+                    <option value="allascdesc" selected>All (asc-desc)</option>
+                    <option value="asc">asc</option>
+                    <option value="desc">desc</option>
+                  </select>
+                  <!--  -->
+                </span>
+                <button
+                  class="btn btn-outline-secondary main-add-teacher"
+                  style="width: 100px"
+                  type="button"
+                  id="button-addon2"
+                  data-bs-toggle="modal"
+                  data-bs-target="#teacherModal"
+                >
+                  Add
+                </button>
+              </div>
+              <div
+                class="alert alert-info border border-success rounded p-2 mb-3 d-flex gap-1 teachers-total"
+              >
+                <span>Teachers:</span>
+                <p>0</p>
+              </div>
+            </div>
+
+            <!-- hero main -->
+
+            <div class="hero-row"></div>
+
+            <!-- hero pagination -->
+
+            <nav aria-label="Page navigation example">
+              <ul class="pagination">
+
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- MODAL -->
+
+    <div
+      class="modal fade"
+      id="teacherModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+    <div class="modal-dialog">
+        <form class="row g-3 needs-validation teacher-form" novalidate>
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Teacher form
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body row">
+              <div class="col-6">
+                <label for="firstNameTeacher" class="form-label"
+                  >First name</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstNameTeacher"
+                  required
+                />
+                <!-- <div class="valid-feedback">Looks good!</div> -->
+                <div class="invalid-feedback">Please enter first name!</div>
+              </div>
+              <div class="col-6">
+                <label for="lastNameTeacher" class="form-label"
+                  >Last name</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lastNameTeacher"
+                  required
+                />
+                <!-- <div class="valid-feedback">Looks good!</div> -->
+              </div>
+              <div class="col-4">
+                <label for="avatarImageTeacher" class="form-label"
+                  >Avatar Image</label
+                >
+                <div class="input-group has-validation">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="avatarImageTeacher"
+                    aria-describedby="inputGroupPrepend"
+                    required
+                  />
+                  <div class="invalid-feedback">Please enter avatar image.</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <label for="teacherGroupsEnter" class="form-label"
+                  >Groups</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="teacherGroupsEnter"
+                  required
+                />
+                <div class="invalid-feedback">Please enter group names!</div>
+              </div>
+              <div class="col-md-4">
+                <label for="teacherPhoneNumber" class="form-label"
+                  >Phone Number</label
+                >
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="teacherPhoneNumber"
+                  required
+                />
+                <!-- <div class="valid-feedback">Looks good!</div> -->
+                <div class="invalid-feedback">Please enter phone number in UZ format!</div>
+              </div>
+              <div class="col-md-4">
+                <label for="teacherEmail" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="teacherEmail"
+                  required
+                />
+                <!-- <div class="valid-feedback">Looks good!</div> -->
+                <div class="invalid-feedback">Please enter email!</div>
+              </div>
+              <div class="col-12">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="isMarriedCheckTeacher"
+                  />
+                  <label class="" for="isMarriedCheckTeacher">
+                    Enter if married
+                  </label>
+                  <!-- <div class="invalid-feedback">
+                    Please enter your marriage status!
+                  </div> -->
+                </div>
+              </div>
+              <!-- <div class="col-12">
+                <button class="btn btn-primary" type="submit">
+                  Submit form
+                </button>
+              </div> -->
+           
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="submit" class="btn btn-primary add-teacher-submit-btn">Add Teacher</button>
+          </div>
+        </div>
+      </form>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!-- 
+
+  
+
+      
+
+        // let arr = [];
+    // let arr2 = this.teacherGroupsEnter.value.split( " " );
+    // arr.push( arr2 )
+    // console.log( arr );
+ -->
+
+ <!-- teachers all done almost 1 2 3 4 5  6 78  99 -->
