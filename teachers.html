@@ -14,6 +14,10 @@
     <script defer type="module" src="js/teachers.js"></script>
   </head>
   <body>
+    
+    <div class="loading">
+      <div class="pulse"></div>
+    </div>
     <!-- HEADER -->
 
     <header class="header">
@@ -21,14 +25,10 @@
         <div class="header-wrapper">
           <div class="header-logo">Abdugaffor</div>
           <nav class="header-nav">
-            <ul>
-              <li><a href="teachers.html">Teachers</a></li>
-              <li><a href="students.html">All Students</a></li>
-            </ul>
+            <ul></ul>
           </nav>
           <div class="header-dark-light">
             <!-- <button type="button" class="btn btn-light">Light</button> -->
-            <button type="button" class="btn btn-dark">Dark</button>
           </div>
         </div>
       </div>
@@ -41,8 +41,12 @@
           <div class="hero-wrapper">
             <!-- hero top -->
 
+            <!-- making some changes 1 2 3 4 5 6  -->
+
             <div class="hero-top">
-              <div class="input-group mb-3 my-3">
+              <div
+                class="input-group mb-3 my-3 hero-top-main-wrapper border rounded"
+              >
                 <input
                   type="search"
                   class="form-control search-input"
@@ -59,7 +63,9 @@
                     class="form-select mx-3 lastNameselect-ascdesc"
                     aria-label="Default select example"
                   >
-                    <option value="allascdesc" selected>All (asc-desc)</option>
+                    <option value="allascdesc" selected>
+                      All LastName(asc-desc)
+                    </option>
                     <option value="asc">asc</option>
                     <option value="desc">desc</option>
                   </select>
@@ -90,10 +96,8 @@
 
             <!-- hero pagination -->
 
-            <nav aria-label="Page navigation example">
-              <ul class="pagination">
-
-              </ul>
+            <nav aria-label="Page navigation pagination-wrapper example">
+              <ul class="pagination"></ul>
             </nav>
           </div>
         </div>
@@ -109,21 +113,21 @@
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
     >
-    <div class="modal-dialog">
+      <div class="modal-dialog">
         <form class="row g-3 needs-validation teacher-form" novalidate>
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">
-              Teacher form
-            </h1>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body row">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Teacher form
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body row">
               <div class="col-6">
                 <label for="firstNameTeacher" class="form-label"
                   >First name</label
@@ -187,7 +191,9 @@
                   required
                 />
                 <!-- <div class="valid-feedback">Looks good!</div> -->
-                <div class="invalid-feedback">Please enter phone number in UZ format!</div>
+                <div class="invalid-feedback">
+                  Please enter phone number in UZ format!
+                </div>
               </div>
               <div class="col-md-4">
                 <label for="teacherEmail" class="form-label">Email</label>
@@ -221,20 +227,24 @@
                   Submit form
                 </button>
               </div> -->
-           
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="submit"
+                class="btn btn-primary add-teacher-submit-btn"
+              >
+                Add Teacher
+              </button>
+            </div>
           </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <button type="submit" class="btn btn-primary add-teacher-submit-btn">Add Teacher</button>
-          </div>
-        </div>
-      </form>
+        </form>
       </div>
     </div>
   </body>
@@ -252,4 +262,4 @@
     // console.log( arr );
  -->
 
- <!-- teachers all done almost 1 2 3 4 5  6 78  99 -->
+<!-- teachers all done almost 1 2 3 4 5  6 78  99 -->

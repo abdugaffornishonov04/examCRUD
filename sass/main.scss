@@ -1,5 +1,6 @@
 @use "./layout/header";
 @use "./pages/teachers";
+@use "./pages/students";
 
 * {
   margin: 0;
@@ -7,6 +8,34 @@
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
+}
+
+
+body{
+background-image: linear-gradient(30deg,
+      hsl(240deg 100% 20%) 0%,
+      hsl(283deg 100% 21%) 14%,
+      hsl(308deg 100% 24%) 24%,
+      hsl(322deg 100% 31%) 32%,
+      hsl(331deg 100% 38%) 39%,
+      hsl(338deg 100% 43%) 46%,
+      hsl(355deg 89% 58%) 51%,
+      hsl(12deg 100% 60%) 55%,
+      hsl(26deg 100% 56%) 59%,
+      hsl(39deg 100% 50%) 63%,
+      hsl(47deg 100% 50%) 66%,
+      hsl(55deg 100% 50%) 69%,
+      hsl(51deg 100% 49%) 72%,
+      hsl(47deg 100% 47%) 75%,
+      hsl(43deg 100% 45%) 77%,
+      hsl(39deg 100% 43%) 80%,
+      hsl(36deg 100% 41%) 82%,
+      hsl(31deg 93% 39%) 84%,
+      hsl(26deg 87% 37%) 87%,
+      hsl(21deg 83% 34%) 90%,
+      hsl(15deg 80% 31%) 93%,
+      hsl(9deg 78% 27%) 96%,
+      hsl(0deg 79% 23%) 100%);
 }
 
 .container {
@@ -17,3 +46,37 @@
 
 // main code starts
 
+// 
+
+.loading{
+  position: fixed;
+  z-index: 103743;
+  background-color: #000;   
+  width: 100% !important;
+  height: 100vh !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulse {
+  width: 40px;
+  height: 40px;
+  background-color: #3498db;
+  border-radius: 50%;
+  animation: pulse 1s ease-in-out infinite;
+}

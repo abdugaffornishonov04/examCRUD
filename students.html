@@ -4,32 +4,247 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Students | CRUD</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css" />
+    <script defer src="js/main.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src=""></script>
+    <script defer src="js/bootstrap.bundle.js"></script>
     <script defer type="module" src="js/students.js"></script>
   </head>
   <body>
 
+    <!-- LOADING -->
+
+
+    <div class="loading">
+      <div class="pulse"></div>
+    </div>
+
     <!-- HEADER -->
 
-     <header class="header">
+    <header class="header">
       <div class="container">
         <div class="header-wrapper">
           <div class="header-logo">Abdugaffor</div>
           <nav class="header-nav">
             <ul>
-              <li><a href="teachers.html">Teachers</a></li>
-              <li><a href="students.html">All Students</a></li>
             </ul>
           </nav>
           <div class="header-dark-light">
             <!-- <button type="button" class="btn btn-light">Light</button> -->
-            <button type="button" class="btn btn-dark">Dark</button>
+           
           </div>
         </div>
       </div>
     </header>
+
+    <!-- students-hero -->
+
+    <section class="student-hero">
+      <div class="container">
+        <div class="student-hero-wrapper">
+          <div class="student-hero-top">
+            <div class="input-group mb-3 my-3 d-flex justify-content-center">
+              <span class="input-group-text" id="basic-addon2">
+                <!--  -->
+                <select class="form-select students-teacher-select">
+                  <option teacherId="nothing" value="" selected>All (Teachers)</option>
+                  
+                </select>
+                <select
+                  class="form-select mx-3 birthday-ascdesc"
+                  aria-label="Default select example"
+                >
+                  <option  value="allbirthday" selected>
+                    All Birthday (asc-desc)
+                  </option>
+                  <option value="birthday-asc">asc</option>
+                  <option value="birthday-desc">desc</option>
+                </select>
+                <!--  -->
+              </span>
+              <button
+                class="btn btn-outline-secondary main-add-student"
+                style="width: 100px"
+                type="button"
+                id="button-addon2"
+                data-bs-toggle="modal"
+                data-bs-target="#studentModal"
+              >
+                Add
+              </button>
+            </div>
+            <div
+              class="w-100  d-flex justify-content-center alert alert-warning border border-success rounded p-2 mb-3 d-flex gap-1 students-total"
+            >
+              <span>Students:</span>
+              <p></p>
+            </div>
+          </div>
+          <div class="student-hero-main">
+            <div class="student-row gap-3">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODAL -->
+
+    <div
+      class="modal fade"
+      id="studentModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <form class="row g-3 needs-validation student-form" novalidate>
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Student form
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body row">
+              <div class="col-6">
+                <label for="firstNameStudent" class="form-label"
+                  >First name</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstNameStudent"
+                  required
+                />
+                <!-- <div class="valid-feedback">Looks good!</div> -->
+                <div class="invalid-feedback">Please enter first name!</div>
+              </div>
+              <div class="col-6">
+                <label for="lastNameStudent" class="form-label"
+                  >Last name</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lastNameStudent"
+                  required
+                />
+                <!-- <div class="valid-feedback">Looks good!</div> -->
+              </div>
+              <div class="col-4">
+                <label for="avatarImageStudent" class="form-label"
+                  >Avatar Image</label
+                >
+                <div class="input-group has-validation">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="avatarImageStudent"
+                    aria-describedby="inputGroupPrepend"
+                    required
+                  />
+                  <div class="invalid-feedback">Please enter avatar image.</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <label for="birthdayStudent" class="form-label">Birthday</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  id="birthdayStudent"
+                  required
+                />
+                <div class="invalid-feedback">Please enter birthday!</div>
+              </div>
+              <div class="col-md-4">
+                <label for="studentPhoneNumber" class="form-label"
+                  >Phone Number</label
+                >
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="studentPhoneNumber"
+                  required
+                />
+                <!-- <div class="valid-feedback">Looks good!</div> -->
+                <div class="invalid-feedback">
+                  Please enter phone number in UZ format!
+                </div>
+              </div>
+              <div class="col-md-4">
+                <label for="studentFieldname" class="form-label"
+                  >Field name</label
+                >
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="studentFieldname"
+                  required
+                />
+                <!-- <div class="valid-feedback">Looks good!</div> -->
+                <div class="invalid-feedback">Please enter field name!</div>
+              </div>
+              <div class="col-md-4">
+                <label for="studentEmail" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="studentEmail"
+                  required
+                />
+                <!-- <div class="valid-feedback">Looks good!</div> -->
+                <div class="invalid-feedback">Please enter email!</div>
+              </div>
+              <div class="col-12">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="isWorkStudentCheck"
+                  />
+                  <label class="" for="isWorkStudentCheck">
+                    Enter if works!
+                  </label>
+                  <!-- <div class="invalid-feedback">
+                    Please enter your marriage status!
+                  </div> -->
+                </div>
+              </div>
+              <!-- <div class="col-12">
+                <button class="btn btn-primary" type="submit">
+                  Submit form
+                </button>
+              </div> -->
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="submit"
+                class="btn btn-primary add-student-submit-btn"
+              >
+                Add Student
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
+
+<!-- done first steps -->

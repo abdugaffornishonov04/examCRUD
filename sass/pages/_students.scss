@@ -1,0 +1,109 @@
+.student-hero {
+
+
+  .student-hero-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    .student-hero-main {
+      .student-row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        .student-card {
+          width: 600px;
+          height: 300px;
+          display: flex;
+          align-items: center;
+          border: 3px solid red;
+
+          .card-left {
+            display: flex;
+            flex-direction: column;
+
+            .student-card-image {
+              display: flex;
+              width: 340px;
+              height: 300px;
+              border: 2px solid green;
+              position: relative;
+
+              img {
+                width: 100%;
+                object-fit: cover;
+              }
+
+              .student-firstname {
+                margin: 0;
+                position: absolute;
+                bottom: 10px;
+              }
+
+              .student-lastName {
+                margin: 0;
+                position: absolute;
+                bottom: 50px;
+              }
+
+              .student-birthday {
+                margin: 0;
+                position: absolute;
+                bottom: 90px;
+              }
+            }
+          }
+
+          .card-right {
+            width: 100%;
+            padding: 10px;
+
+            p {
+              width: 100%;
+              background-color: #f1e7d8;
+              border: 1px solid #f1e7d8;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.main-add-student {
+  background-color: #f1e7d8 !important;
+
+  &:hover {
+    color: brown !important;
+  }
+}
+
+.lastNameselect-ascdesc {
+  background-color: #f1e7d8 !important;
+}
+
+.students-teacher-select {
+  background-color: #f1e7d8 !important;
+}
+
+.student-firstname {
+  margin-left: 10px !important;
+  color: black;
+  padding: 3px;
+  background-color: #fff;
+  border-radius: 3px;
+}
+.student-lastName{
+  margin-left: 10px !important;
+  padding: 3px;
+  color:black;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+.student-birthday{
+  margin-left: 10px !important;
+  color:#fff;
+  background-color: #198754;
+  padding: 3px;
+  border-radius:3px;
+}

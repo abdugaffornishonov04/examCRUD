@@ -1,5 +1,5 @@
 .header {
-  background-color: #fff;
+  background-color: #F1E7D8;
   padding: 20px 0;
   border-bottom: 2px solid red;
 }
@@ -18,6 +18,15 @@
   gap: 10px;
 }
 
+.teachers-href-class {
+  margin: 0;
+  color: blue;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+}
+
 .hero .hero-wrapper {
   display: flex;
   flex-direction: column;
@@ -29,41 +38,57 @@
 .hero .hero-wrapper .hero-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
 }
 .hero .hero-wrapper .hero-row .hero-card {
   width: 300px;
   display: flex;
   flex-direction: column;
+  background-color: #F1E7D8;
 }
 .hero .hero-wrapper .hero-row .hero-card .hero-card-image-box {
   width: 100%;
   height: 200px;
-  border: 2px solid red;
+  border-radius: 10px;
   position: relative;
+}
+.hero .hero-wrapper .hero-row .hero-card .hero-card-image-box div {
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  bottom: 0;
+  background-image: linear-gradient(0deg, #f1e7d8, transparent);
 }
 .hero .hero-wrapper .hero-row .hero-card .hero-card-image-box img {
   width: 100%;
   height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 6px;
 }
 .hero .hero-wrapper .hero-row .hero-card .hero-card-image-box .teacher-firstname {
+  padding: 2px 10px;
+  border-radius: 20px;
   margin: 0;
   position: absolute;
-  bottom: 10px;
+  bottom: 0px;
   left: 10px;
   font-size: 22px;
-  background-color: #fff;
-  color: #000;
+  background-color: #198754;
+  color: #fff;
+  z-index: 101;
 }
 .hero .hero-wrapper .hero-row .hero-card .hero-card-image-box .teacher-lastname {
+  padding: 5px 10px;
+  border-radius: 20px;
   margin: 0;
   position: absolute;
-  bottom: 50px;
+  bottom: 40px;
   left: 10px;
   font-size: 12px;
   background-color: #fff;
   color: #000;
+  z-index: 101;
 }
 .hero .hero-wrapper .hero-row .hero-card .hero-card-body {
   padding: 10px;
@@ -81,16 +106,22 @@
   font-style: italic;
 }
 .hero .hero-wrapper .hero-row .hero-card .hero-card-body .teacher-ismarried {
+  background-color: #CFF4FC;
+  color: #000;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 5px;
 }
 .hero .hero-wrapper .hero-row .hero-card .hero-card-body .teacher-phone-number {
+  background-color: #CFF4FC;
+  color: #000;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 5px;
 }
 .hero .hero-wrapper .hero-row .hero-card .hero-card-body .teacher-email {
+  background-color: #CFF4FC;
+  color: #000;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 5px;
@@ -118,6 +149,159 @@
   width: 130px;
 }
 
+.teachers-total {
+  background-color: #F1E7D8;
+}
+
+.main-add-teacher {
+  background-color: #F1E7D8 !important;
+}
+.main-add-teacher:hover {
+  color: brown !important;
+}
+
+.lastNameselect-ascdesc {
+  background-color: #F1E7D8 !important;
+}
+.lastNameselect-ascdesc:hover {
+  color: brown !important;
+}
+
+.teacher-ismarried-select {
+  background-color: #F1E7D8 !important;
+}
+.teacher-ismarried-select:hover {
+  color: brown !important;
+}
+
+.hero-top-main-wrapper {
+  background-color: #F1E7D8 !important;
+}
+
+.search-input {
+  background-color: #F1E7D8 !important;
+}
+
+.pagination {
+  margin-top: 40px;
+  display: flex !important;
+  justify-content: center !important;
+  gap: 20px !important;
+}
+.pagination li {
+  border-radius: 10px !important;
+}
+.pagination li button {
+  border-radius: 10px !important;
+}
+
+.active {
+  width: 100px !important;
+  background-color: #0D6EFD !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.disabled {
+  pointer-events: none !important;
+}
+
+.student-hero .student-hero-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.student-hero .student-hero-wrapper .student-hero-main .student-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.student-hero .student-hero-wrapper .student-hero-main .student-row .student-card {
+  width: 600px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  border: 3px solid red;
+}
+.student-hero .student-hero-wrapper .student-hero-main .student-row .student-card .card-left {
+  display: flex;
+  flex-direction: column;
+}
+.student-hero .student-hero-wrapper .student-hero-main .student-row .student-card .card-left .student-card-image {
+  display: flex;
+  width: 340px;
+  height: 300px;
+  border: 2px solid green;
+  position: relative;
+}
+.student-hero .student-hero-wrapper .student-hero-main .student-row .student-card .card-left .student-card-image img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.student-hero .student-hero-wrapper .student-hero-main .student-row .student-card .card-left .student-card-image .student-firstname {
+  margin: 0;
+  position: absolute;
+  bottom: 10px;
+}
+.student-hero .student-hero-wrapper .student-hero-main .student-row .student-card .card-left .student-card-image .student-lastName {
+  margin: 0;
+  position: absolute;
+  bottom: 50px;
+}
+.student-hero .student-hero-wrapper .student-hero-main .student-row .student-card .card-left .student-card-image .student-birthday {
+  margin: 0;
+  position: absolute;
+  bottom: 90px;
+}
+.student-hero .student-hero-wrapper .student-hero-main .student-row .student-card .card-right {
+  width: 100%;
+  padding: 10px;
+}
+.student-hero .student-hero-wrapper .student-hero-main .student-row .student-card .card-right p {
+  width: 100%;
+  background-color: #f1e7d8;
+  border: 1px solid #f1e7d8;
+}
+
+.main-add-student {
+  background-color: #f1e7d8 !important;
+}
+.main-add-student:hover {
+  color: brown !important;
+}
+
+.lastNameselect-ascdesc {
+  background-color: #f1e7d8 !important;
+}
+
+.students-teacher-select {
+  background-color: #f1e7d8 !important;
+}
+
+.student-firstname {
+  margin-left: 10px !important;
+  color: black;
+  padding: 3px;
+  background-color: #fff;
+  border-radius: 3px;
+}
+
+.student-lastName {
+  margin-left: 10px !important;
+  padding: 3px;
+  color: black;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+.student-birthday {
+  margin-left: 10px !important;
+  color: #fff;
+  background-color: #198754;
+  padding: 3px;
+  border-radius: 3px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -126,8 +310,42 @@
   text-decoration: none;
 }
 
+body {
+  background-image: linear-gradient(30deg, hsl(240, 100%, 20%) 0%, hsl(283, 100%, 21%) 14%, hsl(308, 100%, 24%) 24%, hsl(322, 100%, 31%) 32%, hsl(331, 100%, 38%) 39%, hsl(338, 100%, 43%) 46%, hsl(355, 89%, 58%) 51%, hsl(12, 100%, 60%) 55%, hsl(26, 100%, 56%) 59%, hsl(39, 100%, 50%) 63%, hsl(47, 100%, 50%) 66%, hsl(55, 100%, 50%) 69%, hsl(51, 100%, 49%) 72%, hsl(47, 100%, 47%) 75%, hsl(43, 100%, 45%) 77%, hsl(39, 100%, 43%) 80%, hsl(36, 100%, 41%) 82%, hsl(31, 93%, 39%) 84%, hsl(26, 87%, 37%) 87%, hsl(21, 83%, 34%) 90%, hsl(15, 80%, 31%) 93%, hsl(9, 78%, 27%) 96%, hsl(0, 79%, 23%) 100%);
+}
+
 .container {
   max-width: 1300px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+.loading {
+  position: fixed;
+  z-index: 103743;
+  background-color: #000;
+  width: 100% !important;
+  height: 100vh !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.pulse {
+  width: 40px;
+  height: 40px;
+  background-color: #3498db;
+  border-radius: 50%;
+  animation: pulse 1s ease-in-out infinite;
 }

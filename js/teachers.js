@@ -26,6 +26,7 @@ function teacherHTML( el ) {
     <img src="${el.avatar}" alt="">
     <p class="teacher-firstname">${el.firstName}</p>
     <p class="teacher-lastname">${el.lastName}</p>
+    <div></div>
   </div>
   <div class="hero-card-body">
     <p class="techer-groups-groups">Groups</p>
@@ -69,7 +70,7 @@ async function getTeacherData() {
     let pages = Math.ceil( dataLength / LIMIT );
 
     pagination.innerHTML = `
-    <li class="page-item">
+    <li class="page-item"  ${activePage == 1 ? "disabled" : ""}>
       <button pagesAtt="-" class="page-link  ${activePage == 1 ? "disabled" : ""}">Previous</button>
     </li>
     `
@@ -248,7 +249,7 @@ isMarriedSelect.addEventListener( "change", async function () {
 ///is married sort done
 //////u43r4 4 t 9r e9r edd dgede  ey3eee e eg yeg7te 3ete wwwgvdvw d
 
-lastNameSelect.addEventListener( "click", async function () {
+lastNameSelect.addEventListener( "change", async function () {
   let { data } = await instanceAxios( "teachers" );
 
 
@@ -285,3 +286,4 @@ lastNameSelect.addEventListener( "click", async function () {
 /////teacher all done except for the phone regex
 // so i am counting to 20 so that when i screw the code up, I am restoring back it
 /// start  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+/// or even more man 1 2 3    873 3 764 545 76543265 75 8756845745682t7847554 54 854
